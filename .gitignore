@@ -1,0 +1,60 @@
+# Python bytecode files
+*.pyc
+*.pyo
+*.pyd
+__pycache__
+
+# Virtual environments
+env/
+venv/
+ENV/
+.venv/
+
+# Django-specific
+*.log
+*.pot
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+db.sqlite3
+*.sqlite3
+media/
+staticfiles/
+static/
+
+# Wagtail-specific (including migrations)
+*.bak
+*.swp
+*.swo
+migrations/
+
+# Editor-specific files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# macOS-specific files
+.DS_Store
+
+# Windows-specific files
+Thumbs.db
+
+# Coverage reports
+.coverage
+coverage.xml
+*.cover
+*.py,cover
+
+# Temporary files
+*.log
+*.pot
+*.swp
+*.swo
+
+# Packaging
+*.egg
+*.egg-info/
+dist/
+build/
