@@ -12,31 +12,33 @@
 
 <div class="grid grid-cols-5 grid-rows-5 gap-4">
     
-    <div class="col-span-5 row-span-2 bg-contain relative" 
-         style="background-image: url('{% static 'imgs/cover-image.png' %}'); 
-                background-repeat: no-repeat; 
-                background-position: top; 
-                height: auto; min-height: 600px;">
-        <!-- The h1 is positioned in the top-left corner of the container -->
-         
-        <div class="grid grid-cols-5 grid-rows-5 gap-2 md:gap-3 lg:gap-4">
+    <div class="col-span-5 row-span-2 bg-contain relative"
+     style="background-image: url('{% static 'imgs/cover-image.png' %}');
+            background-repeat: no-repeat;
+            background-position: center top;
+            width: 100%; /* Ensures the div spans the full width */
+            height: 30vw; /* Sets the height to 30% of the viewport width */
+            background-size: cover;">
+    <!-- The content inside the div -->
+        <div class="flex flex-col absolute inset-0 md:pt-2 lg:pt-3">
             <!-- Title section -->
-            <div class="col-span-5 row-span-3 flex flex-col justify-start items-start pl-4 md:pl-12 lg:pl-16 pt-4 md:pt-8 lg:pt-12 md:pb-1 lg:pb-2">
+            <div class="flex flex-col justify-start items-start pl-4 md:pl-12 lg:pl-16 pt-4 md:pt-8 lg:pt-12" style="max-height: 200px;">
                 <h1 class="text-white text-4xl md:text-5xl lg:text-8xl" style="font-family: 'Luckiest Guy', serif;">Django Horizons</h1>
             </div>
         
             <!-- Description section -->
-            <div class="col-span-5 row-span-2 row-start-4 flex flex-col justify-start items-start pl-6 md:pl-12 lg:pl-16">
-                <p class="text-white text-lg md:text-2xl lg:text-4xl hidden md:block" style="font-family: 'Luckiest Guy', serif;">
+            <div class="flex flex-col justify-start items-start pl-6 md:pl-12 lg:pl-16">
+                <p class="text-white text-lg md:text-2xl lg:text-3xl hidden md:block" style="font-family: 'Luckiest Guy', serif;">
                     A blog documenting my journey into Web Development
                 </p>
             </div>
         </div>
-    
-        
-        
     </div>
     
-    <div class="col-span-5 row-span-3 row-start-3">2</div>
+    
+    <div class="grid grid-cols-2 grid-rows-5 gap-4">
+        <div class="row-span-5">1</div>
+        <div class="row-span-5">2</div>
+    </div>
 </div>
 {% endblock content %}
