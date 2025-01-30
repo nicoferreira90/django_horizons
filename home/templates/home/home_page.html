@@ -10,16 +10,17 @@
 {% block content %}
 
 
-<div class="grid grid-cols-5 grid-rows-5 gap-4">
+<div class="grid grid-cols-1 gap-4 w-full">
     
-    <div class="col-span-5 row-span-2 bg-contain relative"
-     style="background-image: url('{% static 'imgs/cover-image.png' %}');
-            background-repeat: no-repeat;
-            background-position: center top;
-            width: 100%; /* Ensures the div spans the full width */
-            height: 30vw; /* Sets the height to 30% of the viewport width */
-            background-size: cover;">
-    <!-- The content inside the div -->
+    <!-- First section with cover image -->
+    <div class="col-span-1 row-span-2 bg-contain relative"
+        style="background-image: url('{% static 'imgs/cover-image.png' %}');
+                background-repeat: no-repeat;
+                background-position: center top;
+                width: 100%; /* Ensures the div spans the full width */
+                height: 30vw; /* Sets the height to 30% of the viewport width */
+                background-size: cover;">
+        <!-- The content inside the div -->
         <div class="flex flex-col absolute inset-0 md:pt-2 lg:pt-3">
             <!-- Title section -->
             <div class="flex flex-col justify-start items-start pl-4 md:pl-12 lg:pl-16 pt-4 md:pt-8 lg:pt-12" style="max-height: 200px;">
@@ -35,10 +36,37 @@
         </div>
     </div>
     
-    
-    <div class="grid grid-cols-2 grid-rows-5 gap-4">
-        <div class="row-span-5">1</div>
-        <div class="row-span-5">2</div>
+    <!-- Second section with two columns -->
+    <div class="grid grid-cols-2 gap-4 w-full px-4 md:px-8 lg:px-12 py-2 md:py-4 lg:py-6">
+        <div class="col-span-2 row-span-5">
+            <p class="text-green-800 text-lg pb-1 md:pb-2 lg:pb-3 md:text-2xl lg:text-3xl md:block" style="font-family: 'Luckiest Guy', serif;">
+                Welcome to my blog!
+            </p>
+            <p class="text-black md:text-lg lg:text-2xl">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation 
+                ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
+                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt 
+                mollit anim id est laborum."</p>
+        </div>
+        <div class="col-span-2 row-span-5">
+            <p class="text-green-800 text-lg pb-1 md:pb-2 lg:pb-3 md:text-2xl lg:text-3xl md:block" style="font-family: 'Luckiest Guy', serif;">
+                Latest Post
+            </p>
+            <div class="card card-side bg-base-100 shadow-xl">
+                <figure>
+                  <img
+                    src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                    alt="Movie" />
+                </figure>
+                <div class="card-body">
+                  <h2 class="card-title">New movie is released!</h2>
+                  <p>Click the button to watch on Jetflix app.</p>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Watch</button>
+                  </div>
+                </div>
+              </div>
+        </div>
     </div>
 </div>
 {% endblock content %}
