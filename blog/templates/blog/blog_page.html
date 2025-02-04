@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load wagtailcore_tags %}
+
+{% block body_class %}template-blogpage{% endblock %}
+
+{% block content %}
+    <div class="col-span-1 row-span-2 bg-contain relative"
+            style="background-image: url('{% static 'imgs/cover-image-simple.png' %}');
+                    background-repeat: no-repeat;
+                    background-position: center top;
+                    width: 100%; /* Ensures the div spans the full width */
+                    height: 10vw; /* Sets the height to 10% of the viewport width */
+                    background-size: cover;">
+            <!-- The content inside the div -->
+            <div class="flex flex-col absolute inset-0 md:pt-2 lg:pt-3">
+                <!-- Title section -->
+                <div class="flex flex-col justify-start items-start pl-4 md:pl-8 lg:pl-12 xl:pl-16 pt-4 md:pt-6 lg:pt-8 xl:pt-10" style="max-height: 200px;">
+                    <h1 class="text-white text-2xl md:text-4xl lg:text-5xl xl:text-6xl" style="font-family: 'Luckiest Guy', serif;">Django Horizons</h1>
+                </div>
+            </div>
+        </div>
+
+    <h1>{{ page.blog_title }}</h1>
+    <p class="meta">{{ page.date }}</p>
+
+    {{ page.body|richtext }}
+
+    {% comment %} <p><a href="{{ page.get_parent.url }}">Return to blog</a></p> {% endcomment %}
+
+{% endblock %}

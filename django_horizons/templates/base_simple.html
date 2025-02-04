@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block body_class %}
+    {% comment %} Default body class can go here {% endcomment %}
+{% endblock %}
+
+{% block extra_css %}
+    <!-- Additional CSS to be added on pages that extend base_simple -->
+{% endblock extra_css %}
+
+{% block extra_content %}
+    <!-- Content that might only apply to certain pages -->
+    <h1 style="color: red;">dsfilnk</h1>
+{% endblock extra_content %}
+
+{% block content %}
+    <!-- Main content block, this will be overridden by child templates -->
+{% endblock %}
