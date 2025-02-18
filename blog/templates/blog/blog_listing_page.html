@@ -33,16 +33,43 @@
 <div class="grid grid-cols-1 gap-8 w-full px-4 md:px-8 lg:px-12 py-2 md:py-4 lg:py-6 lg:w-3/4 mx-auto w-full">
 
     <div>
-        {{page.custom_title}}
+        <p class="text-green-800 text-lg pb-1 md:pb-2 lg:pb-3 md:text-2xl lg:text-3xl md:block" style="font-family: 'Luckiest Guy', serif;">
+            {{page.custom_title}}
+        </p>
     </div>
     <br>
     
     {% for post in posts %}
-    <a href="{{post.url}}">{{post.title}}</a>
-    <hr>
 
-{% endfor %}
+
+    <div class="justify-center items-center">
+        <div class="card bg-base-100 w-96 shadow-xl">
+            <figure>
+            <img
+                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
+                alt="Shoes" />
+            </figure>
+            <div class="card-body">
+            <h2 class="card-title font-bold">{{post.title}}</h2>
+            <h4 class="card-title">{{post.date}}</h2>
+            <p>lorem ipsum...</p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary">Go to post</button>
+            </div>
+            </div>
+        </div>
     </div>
+
+    {% endfor %}
+    </div>
+
+    <div class="flex flex-col justify-center items-center mt-4 mb-8">
+        <div class="self-center">
+            <button class="btn btn-primary mr-8 mb-8">Go to home page</button>
+        </div>
+        <p class="text-center">© 2025 Nicolás Ferreira. All rights reserved.</p>
+    </div>
+
 </div>
 
 
