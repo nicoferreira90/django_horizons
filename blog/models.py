@@ -50,7 +50,7 @@ class BlogListingPage(RoutablePageMixin, Page):
 
     template = "blog/blog_listing_page.html"
 
-    max_count_per_parent = 1
+    max_count = 1
 
     custom_title = models.CharField(
         max_length=100, blank=False, null=False, help_text="Page title"
