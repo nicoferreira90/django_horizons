@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% load static %}
 
@@ -43,18 +44,17 @@
 
     <div class="card card-side bg-slate-200 shadow-xl">
         <figure>
-          <img
-            src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-            alt="Movie" />
+            {% image post.blog_banner_image width-400 as img %}
+            <img src="{{ img.url }}" alt="Cover Image">
         </figure>
         <div class="card-body">
+            <h2 class="card-title">{{post.date}}</h2>
             <h2 class="card-title font-bold">{{post.title}}</h2>
-            <h4 class="card-title">{{post.date}}</h2>
           <div class="card-actions justify-end">
-            <button class="btn btn-primary bg-purple-800">Watch</button>
+            <button class="btn btn-primary bg-purple-800">Read</button>
           </div>
         </div>
-      </div>
+    </div>
 
     {% endfor %}
     </div>

@@ -84,35 +84,47 @@
     <div class="hidden md:grid md:grid-cols-1 lg:grid-cols-3 gap-4 w-full px-4 md:px-8 lg:px-12 py-2 md:py-4 lg:py-6">
         
         <div class="col-span-1">
-            <div class="card bg-slate-200 w-full shadow-xl">
+            <div class="card card-side bg-slate-200 shadow-xl">
+                <figure>
+                    {% image posts.1.blog_banner_image width-250 as img %}
+                    <img src="{{ img.url }}" alt="Cover Image">
+                </figure>
                 <div class="card-body">
-                    <h2 class="card-title">{{posts.1.title}}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary bg-purple-800">Buy Now</button>
-                    </div>
+                    <h2 class="card-title">{{posts.1.date}}</h2>
+                    <h2 class="card-title font-bold">{{posts.1.title}}</h2>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary bg-purple-800">Read</button>
+                  </div>
                 </div>
             </div>
         </div>
         <div class="col-span-1">
-            <div class="card bg-slate-200 w-full shadow-xl">
+            <div class="card card-side bg-slate-200 shadow-xl">
+                <figure>
+                    {% image posts.2.blog_banner_image width-250 as img %}
+                    <img src="{{ img.url }}" alt="Cover Image">
+                </figure>
                 <div class="card-body">
-                    <h2 class="card-title">{{posts.2.title}}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary bg-purple-800">Buy Now</button>
-                    </div>
+                    <h2 class="card-title">{{posts.2.date}}</h2>
+                    <h2 class="card-title font-bold">{{posts.2.title}}</h2>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary bg-purple-800">Read</button>
+                  </div>
                 </div>
             </div>
         </div>
         <div class="col-span-1">
-            <div class="card bg-slate-200 w-full shadow-xl">
+            <div class="card card-side bg-slate-200 shadow-xl">
+                <figure>
+                    {% image posts.3.blog_banner_image width-250 as img %}
+                    <img src="{{ img.url }}" alt="Cover Image">
+                </figure>
                 <div class="card-body">
-                    <h2 class="card-title">{{posts.3.title}}</h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <button class="btn btn-primary bg-purple-800">Buy Now</button>
-                    </div>
+                    <h2 class="card-title">{{posts.3.date}}</h2>
+                    <h2 class="card-title font-bold">{{posts.3.title}}</h2>
+                  <div class="card-actions justify-end">
+                    <button class="btn btn-primary bg-purple-800">Read</button>
+                  </div>
                 </div>
             </div>
         </div>
