@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
+{% load wagtailcore_tags %}
+{% load wagtailimages_tags %}
 
 {% block body_class %}template-homepage{% endblock %}
 
@@ -57,12 +59,12 @@
             </p>
             <div class="card card-side bg-slate-200 shadow-xl">
                 <figure>
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                        alt="Movie" />
+                    {% image posts.0.blog_banner_image width-400 as img %}
+                    <img src="{{ img.url }}" alt="Cover Image">
                 </figure>
                 <div class="card-body">
-                    <h2 class="card-title">New movie is released!</h2>
+                    <p>{{posts.0.date}}</p>
+                    <h2 class="card-title">{{posts.0.title}}</h2>
                     <p>Click the button to watch on Jetflix app.</p>
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary bg-purple-800">Read</button>
@@ -84,7 +86,7 @@
         <div class="col-span-1">
             <div class="card bg-slate-200 w-full shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title">Card title!</h2>
+                    <h2 class="card-title">{{posts.1.title}}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary bg-purple-800">Buy Now</button>
@@ -95,7 +97,7 @@
         <div class="col-span-1">
             <div class="card bg-slate-200 w-full shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title">Card title!</h2>
+                    <h2 class="card-title">{{posts.2.title}}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary bg-purple-800">Buy Now</button>
@@ -106,7 +108,7 @@
         <div class="col-span-1">
             <div class="card bg-slate-200 w-full shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title">Card title!</h2>
+                    <h2 class="card-title">{{posts.3.title}}</h2>
                     <p>If a dog chews shoes whose shoes does he choose?</p>
                     <div class="card-actions justify-end">
                         <button class="btn btn-primary bg-purple-800">Buy Now</button>
