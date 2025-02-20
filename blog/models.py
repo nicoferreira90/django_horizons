@@ -62,5 +62,5 @@ class BlogListingPage(RoutablePageMixin, Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context["posts"] = BlogPage.objects.live().public()
+        context["posts"] = BlogPage.objects.live().public().order_by("-date")
         return context

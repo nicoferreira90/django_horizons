@@ -24,6 +24,9 @@
             </div>
     </div>
 
+
+
+    
 <div class="grid grid-cols-1 gap-8 w-full px-4 md:px-8 lg:px-12 py-2 md:py-4 lg:py-6 lg:w-3/4 mx-auto w-full">
     
     <p class="meta">{{ page.date }}</p>
@@ -33,8 +36,9 @@
         </h1>
 
         {% for block in page.body %}
-            <div class="m-2">
+            <div class="m-1">
             {% include_block block %}
+            <br>
             </div>
         {% endfor %}
 
