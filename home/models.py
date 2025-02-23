@@ -35,3 +35,8 @@ class AboutPage(Page):
     content_panels = Page.content_panels + [
         FieldPanel("body", classname="full"),
     ]
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["home_url"] = HomePage.objects.first().url
+        return context

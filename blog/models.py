@@ -10,6 +10,7 @@ from blog.blocks import RichTextBlock
 from wagtail.images.blocks import ImageBlock
 from wagtail.contrib.routable_page.models import RoutablePageMixin, route
 
+
 from datetime import date
 
 
