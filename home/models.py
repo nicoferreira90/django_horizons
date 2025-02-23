@@ -2,7 +2,7 @@ from django.db import models
 
 from wagtail.models import Page
 
-from blog.models import BlogPage
+from blog.models import BlogPage, BlogListingPage
 
 from wagtail.fields import RichTextField, StreamField
 from wagtail.admin.panels import FieldPanel
@@ -17,6 +17,8 @@ class HomePage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["posts"] = BlogPage.objects.live().public().order_by("-date")
+        context["about_url"] = AboutPage.objects.first().url
+        context["blog_listing_page_url"] = BlogListingPage.objects.first().url
         return context
 
 

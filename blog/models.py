@@ -45,6 +45,11 @@ class BlogPage(Page):
         verbose_name_plural = "Blog Pages"
         ordering = ["-date"]
 
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context["blog_listing_page_url"] = BlogListingPage.objects.first().url
+        return context
+
 
 class BlogListingPage(RoutablePageMixin, Page):
     """Listing Page lists all blog detail pages"""
