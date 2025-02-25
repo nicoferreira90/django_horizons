@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% load widget_tweaks %}
+
 {% load static %}
 
 {% load wagtailcore_tags %}
@@ -47,28 +49,49 @@
 
     <div class="flex flex-col justify-center items-center mt-auto mb-8">
         <div class="self-center">
-            <a href="{{blog_listing_page_url}}" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800">View all blog posts</a>
+            <a href="{{blog_listing_page_url}}" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800 text-lg">View all blog posts</a>
         </div>
     </div>
 
-    <div>
+    <div class="col-span-1 lg:col-span-1 row-span-5 flex flex-col justify-between mb-1 md:mb-2 lg:mb-3">
+        
+
         {% if comments %}
-        <h2>Comments</h2>
+        <h1 class="text-green-800 text-2xl pb-1 md:pb-2 lg:pb-3 md:text-3xl lg:text-4xl md:block" style="font-family: 'Luckiest Guy', serif;">
+            Comments
+        </h1>
         {% for comment in comments %}
         <div class="comment">
             <p><strong>{{ comment.name }}</strong> ({{ comment.created_on }})</p>
             <p>{{ comment.body }}</p>
         </div>
+        <hr>
         {% endfor %}
         {% endif %}
 
-        <h3>Leave a Comment</h3>
+    </div>
+
+    <div class="col-span-1 lg:col-span-1 row-span-5 flex flex-col justify-between mb-4 md:mb-5 lg:mb-6 bg-white p-6 shadow-lg rounded-lg border border-gray-200">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Leave a Comment</h2>
         <form method="post">
             {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Post Comment</button>
+            <div class="space-y-4">
+                <!-- Loop through each form field for consistent styling -->
+                {% for field in form %}
+                    <div>
+                        <label for="{{ field.id_for_label }}" class="block text-gray-700 font-medium mb-2">{{ field.label }}</label>
+                        <div class="mb-4">
+                            <div class="relative">
+                                {{ field|add_class:"border border-gray-300 p-2 rounded-md" }}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <button type="submit" class="py-2 px-6 mt-4 bg-green-800 text-white font-semibold rounded-lg">Post Comment</button>
         </form>
     </div>
+    
 
     <div class="flex flex-col justify-center items-center mt-auto mb-8">
         <p class="text-center">© 2025 Nicolás Ferreira. All rights reserved. <a href="https://www.vecteezy.com/free-vector/landscape">Landscape Vectors by Vecteezy</a>.</p>

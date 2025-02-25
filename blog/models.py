@@ -103,9 +103,9 @@ class BlogComment(models.Model):
     post = models.ForeignKey(
         BlogPage, on_delete=models.CASCADE, related_name="comments"
     )
-    name = models.CharField(max_length=100)
-    email = models.EmailField()
-    body = models.TextField()
+    name = models.CharField(max_length=100, blank=False)
+    email = models.EmailField(blank=False)
+    body = models.TextField(blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
 
