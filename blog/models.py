@@ -1,6 +1,9 @@
 from django.db import models
 
 from django import forms
+from captcha.fields import CaptchaField
+
+from django.contrib.auth.models import User
 
 from django.shortcuts import render, redirect
 
@@ -68,6 +71,10 @@ class BlogPage(Page):
             if form.is_valid():
                 comment = form.save(commit=False)
                 comment.post = self
+
+                # Assign the logged-in user to the comment if they are authenticated, otherwise None
+                if request.user.is_authenticated:
+                    comment.user_account = request.user
                 comment.save()
 
                 # After the comment is saved, redirect to the same page to avoid re-posting on refresh
@@ -108,6 +115,12 @@ class BlogComment(models.Model):
     body = models.TextField(blank=False)
     created_on = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+    user_account = models.ForeignKey(
+        User,
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+    )
 
     class Meta:
         ordering = ["created_on"]
@@ -117,6 +130,9 @@ class BlogComment(models.Model):
 
 
 class CommentForm(forms.ModelForm):
+
+    captcha = CaptchaField()
+
     class Meta:
         model = BlogComment
         fields = ["name", "email", "body"]
