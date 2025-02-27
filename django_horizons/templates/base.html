@@ -38,7 +38,17 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/django_horizons.css' %}">
 
         {% block extra_css %}
-        {# Override this in templates to add extra stylesheets #}
+        <style>
+            ul {
+                list-style-type: disc !important;
+                padding-left: 2rem !important; /* Tailwind's 'pl-6' equivalent */
+            }
+            
+            ol {
+                list-style-type: decimal !important;
+                padding-left: 2rem !important; /* Tailwind's 'pl-6' equivalent */
+            }
+        </style>
         {% endblock %}
     </head>
 
