@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "taggit",
     "widget_tweaks",
     "captcha",
+    "storages",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -142,14 +143,14 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATIC_URL = "/static/"
 
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_URL = "/media/"
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+# MEDIA_URL = "/media/"
 
 # Default storage settings, with the staticfiles storage updated.
 # See https://docs.djangoproject.com/en/5.1/ref/settings/#std-setting-STORAGES
 STORAGES = {
     "default": {
-        "BACKEND": "django.core.files.storage.FileSystemStorage",
+        "BACKEND": "storages.backends.s3.S3Storage",
     },
     # ManifestStaticFilesStorage is recommended in production, to prevent
     # outdated JavaScript / CSS assets being served from cache
@@ -193,3 +194,19 @@ WAGTAILDOCS_EXTENSIONS = [
     "xlsx",
     "zip",
 ]
+
+AWS_ACCESS_KEY_ID = "####################"
+AWS_SECRET_ACCESS_KEY = "####################"
+AWS_STORAGE_BUCKET_NAME = "django-horizons-bucket"  # Your S3 bucket name
+AWS_S3_REGION_NAME = "us-east-2"  # The region your S3 bucket is in (e.g., 'us-east-1')
+
+# Use S3 for static files (optional)
+AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+# Media files will be uploaded to AWS S3
+DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+# Set the URL for media files
+MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/"
+
+WAGTAILIMAGES_FILE_STORAGE = DEFAULT_FILE_STORAGE
