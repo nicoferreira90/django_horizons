@@ -10,8 +10,6 @@ env.read_env()  # new
 PROJECT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(PROJECT_DIR)
 
-ALLOWED_HOSTS = [".fly.dev", "localhost", "127.0.0.1"]
-
 INSTALLED_APPS = [
     "blog",
     "home",
