@@ -38,7 +38,9 @@
             {{ page.blog_title }}
         </h1>
 
-        {% image page.blog_banner_image max-600x400 %}
+        <div class="my-2 md:my-3 lg:my-4">
+            {% image page.blog_banner_image max-600x400 %}
+        </div>
 
         {% for block in page.body %}
             <div class="m-1">
