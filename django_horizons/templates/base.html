@@ -30,12 +30,12 @@
 
         {# Daisy UI #}
         <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        {% comment %} <script src="https://cdn.tailwindcss.com"></script> {% endcomment %}
 
 
 
         {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/django_horizons.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
         {% block extra_css %}
         <style>
@@ -57,15 +57,27 @@
             body {
                 background-color: white !important;
               }
+
+            @media (prefers-color-scheme: dark) {
+                body {
+                    background-color: white !important;
+                }
+            }
+
+            card-title, h2 {
+                color: black !important;
+            }
         </style>
         {% endblock %}
     </head>
 
-    <body class="{% block body_class %}{% endblock %}">
+    <body class="{% block body_class %}{% endblock %} bg-white text-black">
+        {# Wagtail user bar #}
         {% wagtailuserbar %}
 
+        <div class="bg-white">
         {% block content %}{% endblock %}
-
+        </div>
 
 
         {# Global javascript #}
