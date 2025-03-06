@@ -41,4 +41,5 @@ class AboutPage(Page):
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
         context["home_url"] = HomePage.objects.first().url
+        context["blog_listing_page_url"] = BlogListingPage.objects.first().url
         return context
