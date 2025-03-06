@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.urls import include, path
 from django.contrib import admin
+from blog.feeds import LatestBlogPostsFeed
 
 from wagtail.admin import urls as wagtailadmin_urls
 from wagtail import urls as wagtail_urls
@@ -14,6 +15,7 @@ urlpatterns = [
     path("documents/", include(wagtaildocs_urls)),
     path("search/", search_views.search, name="search"),
     path("captcha/", include("captcha.urls")),
+    path("rss/", LatestBlogPostsFeed(), name="rss_feed"),
 ]
 
 
