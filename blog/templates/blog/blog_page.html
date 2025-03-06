@@ -55,6 +55,17 @@
         <div class="self-center">
             <a href="{{blog_listing_page_url}}" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800 text-lg text-white">View all blog posts</a>
         </div>
+        <div class="mt-auto self-end flex items-center justify-center gap-4 w-full">
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/nicoferreira90" 
+            data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @nicoferreira90 on GitHub"
+            style="font-size: 20px; padding: 12px 24px;">
+                Follow @nicoferreira90
+            </a>
+            <a href="{% url 'rss_feed' %}">
+                <img src="{% static 'imgs/rss-icon.png' %}" alt="" style="height: 32px; width: 32px;">
+            </a>
+        </div>
     </div>
 
     <div class="col-span-1 lg:col-span-1 row-span-5 flex flex-col justify-between mb-1 md:mb-2 lg:mb-3">

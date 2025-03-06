@@ -45,11 +45,24 @@
 
     </div>
 
-    <div class="flex flex-col justify-center items-center mt-auto mb-8">
+    <div class="flex flex-col justify-center items-center mt-6 mb-8 bg-white">
         <div class="self-center">
-            <a href="/blog-listing-page/" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800 text-lg text-white">View all blog posts</a>
+            <a href="{{blog_listing_page_url}}" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800 text-lg text-white">View all blog posts</a>
         </div>
-        <p class="text-center">© 2025 Nicolás Ferreira. All rights reserved. <a href="https://www.vecteezy.com/free-vector/landscape">Landscape Vectors by Vecteezy</a>.</p>
+
+        <div class="mt-auto self-end flex items-center justify-center gap-4 w-full">
+            <!-- Place this tag where you want the button to render. -->
+            <a class="github-button" href="https://github.com/nicoferreira90" 
+            data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @nicoferreira90 on GitHub"
+            style="font-size: 20px; padding: 12px 24px;">
+                Follow @nicoferreira90
+            </a>
+            <a href="{% url 'rss_feed' %}">
+                <img src="{% static 'imgs/rss-icon.png' %}" alt="" style="height: 32px; width: 32px;">
+            </a>
+        </div>
+
+        <p class="text-center py-2 md:py-3 lg:py-4">© 2025 Nicolás Ferreira. All rights reserved. <a href="https://www.vecteezy.com/free-vector/landscape">Landscape Vectors by Vecteezy</a>.</p>
     </div>
 </div>
     
