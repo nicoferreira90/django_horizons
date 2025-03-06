@@ -30,7 +30,6 @@
 
 <div class="grid grid-cols-1 gap-8 w-full px-4 md:px-8 lg:px-12 py-2 md:py-4 lg:py-6 lg:w-3/4 mx-auto w-full">
     
-    <p class="meta">{{ page.date }}</p>
     <div class="col-span-1 lg:col-span-1 row-span-5 flex flex-col justify-between">
         <h1 class="text-green-800 text-2xl pb-1 md:pb-2 lg:pb-3 md:text-3xl lg:text-4xl md:block" style="font-family: 'Luckiest Guy', serif;">
             About this blog, and how to reach me
@@ -45,12 +44,12 @@
 
     </div>
 
-    <div class="flex flex-col justify-center items-center mt-6 mb-8 bg-white">
+    <div class="flex flex-col justify-center items-center mt-6 md:mt-8 lg:mt-10 mb-8 md:mb-8 lg:mb-10 bg-white">
         <div class="self-center">
             <a href="{{blog_listing_page_url}}" class="btn btn-primary mr-8 mb-8 bg-purple-800 hover:bg-purple-800 text-lg text-white">View all blog posts</a>
         </div>
 
-        <div class="mt-auto self-end flex items-center justify-center gap-4 w-full">
+        <div class="mt-auto self-end flex items-center justify-center gap-4 w-full mb-4 md:mb-6 lg:mb-8">
             <!-- Place this tag where you want the button to render. -->
             <a class="github-button" href="https://github.com/nicoferreira90" 
             data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @nicoferreira90 on GitHub"
@@ -59,7 +58,13 @@
             </a>
             <a href="{% url 'rss_feed' %}">
                 <img src="{% static 'imgs/rss-icon.png' %}" alt="" style="height: 32px; width: 32px;">
-            </a>
+            </a>  
+                
+            <button class="btn custom-contact-btn bg-white text-black border-[#e5e5e5]">
+                <svg aria-label="Email icon" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g stroke-linejoin="round" stroke-linecap="round" stroke-width="2" fill="none" stroke="black"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></g></svg>
+                <a href="mailto:nicolasalfonsoferreira@gmail.com">Contact Me</a>
+            </button>
+            
         </div>
 
         <p class="text-center py-2 md:py-3 lg:py-4">© 2025 Nicolás Ferreira. All rights reserved. <a href="https://www.vecteezy.com/free-vector/landscape">Landscape Vectors by Vecteezy</a>.</p>
